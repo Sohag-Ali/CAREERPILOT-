@@ -1,0 +1,28 @@
+
+
+model Profile {
+  id            String @id @default(uuid())
+
+  userId        String @unique
+
+  university    String?
+  department    String?
+
+  cgpa          Float?
+
+  bio           String?
+
+  skills        String[]
+
+  githubUrl     String?
+  linkedinUrl   String?
+  portfolioUrl  String?
+
+  targetRole    String?
+
+  experience    String?
+
+  user User @relation(fields:[userId],references:[id])
+
+  @@map("profiles")
+}

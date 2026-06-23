@@ -1,0 +1,37 @@
+
+
+
+model User {
+  id            String   @id @default(uuid())
+
+  name          String
+  email         String   @unique
+  password      String?
+
+  image         String?
+
+  provider      String   @default("credentials")
+
+  role          UserRole @default(USER)
+
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  profile       Profile?
+
+//   resumes       Resume[]
+
+//   roadmaps      Roadmap[]
+
+//   interviews    Interview[]
+
+//   applications  JobApplication[]
+
+//   portfolios    Portfolio[]
+
+//   githubProfile GithubProfile?
+
+@@map("users")
+}
+
+
